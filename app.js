@@ -21,7 +21,9 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-
+app.listen(8000, () => {
+    console.log('app is running on port 8000')
+})
 
 const enter = require('./controllers/enter');
 
