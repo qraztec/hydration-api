@@ -87,9 +87,9 @@ const handlePost = async (req, res, db) => {
   };
   
   module.exports = {
-    handleEnter,
+    handlePost,
     handleGet,
-    handleUpdate,
+    handlePut,
     handleDelete,
   };
   
