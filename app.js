@@ -20,11 +20,15 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
+
+const commands = require('./controllers/commands');
+
+app.post('/post', (req, res) => {commands.handlePost(req,res,db)})
+app.get('/get', (req, res) => {commands.handleGet(req,res,db)})
+app.put('/put', (req, res) => {commands.handlePut(req,res,db)})
+app.delete('/delete', (req, res) => {commands.handleDelete(req,res,db)})
+
 // Start the server
 app.listen(8000, () => {
-    console.log('app is running on port 8000')
+  console.log('app is running on port 8000')
 })
-
-const enter = require('./controllers/enter');
-
-app.post('/enter', (req, res) => {enter.handleEnter(req,res,db)})
