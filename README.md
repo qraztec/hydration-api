@@ -1,6 +1,6 @@
-# Website API 
+# Website API Documentation
 # Fall 2024 
 
 command.js:
 
-node
+app.js:
