@@ -2,7 +2,10 @@
 const handlePost = async (req, res, db) => {
     const { name, bottlesCleaned, soapLevel, sanitation, numBottlesFilled } = req.body;
     if (!name || !bottlesCleaned || !soapLevel || !sanitation || !numBottlesFilled) {
-      return res.status(400).json('incorrect form submission');
+      return res.status(400).json({
+      message: 'incorrect form submission',
+      receivedData: JSON.stringify(req.body)
+    });
     }
     try {
       await db.transaction(async (trx) => {
