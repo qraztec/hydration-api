@@ -1,7 +1,7 @@
 // POST: Add new entry to the database
 const handlePost = async (req, res, db) => {
     const { name, bottlesCleaned, soapLevel, sanitation, numBottlesFilled } = req.body;
-    if (!name || !bottlesCleaned || !soapLevel || !sanitation || !numBottlesFilled) {
+    if (name == undefined || bottlesCleaned == undefined || soapLevel == undefined || sanitation == undefined || numBottlesFilled == undefined) {
       return res.status(400).json({
       message: 'incorrect form submission',
       receivedData: JSON.stringify(req.body)
